@@ -1,4 +1,4 @@
-"""nuevoproyecto URL Configuration
+"""miproyecto URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,8 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+# from .views import inicio, numero_del_usuario, otro_vista, numero_random, mi_plantilla
+# este from views lo llevo al url nuevo en indice 
 
 urlpatterns = [
+    path ('', include("indice.urls")),
+    path('clase/', include("clase.urls")),
     path('admin/', admin.site.urls),
 ]
+
